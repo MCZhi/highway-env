@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://highway-env.farama.org/_modules/highway_env/vehicle/kinematics.html" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
         <link rel="canonical" href="https://highway-env.farama.org/_modules/highway_env/vehicle/kinematics.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.05.20.dev1 -->
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19.dev1 -->
         <title>highway_env.vehicle.kinematics - highway-env Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=2b6f8eb5452c44539a42dd9ada0a48f56e5f404d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=3e7f4c72" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=5d0deb98f4b2e6cecaee64745957f1068f205919" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=49cbaffd" />
     
     
 
@@ -302,7 +302,9 @@
 <span class="kn">from</span> <span class="nn">highway_env.utils</span> <span class="kn">import</span> <span class="n">Vector</span>
 
 
-<div class="viewcode-block" id="Vehicle"><a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle">[docs]</a><span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="n">RoadObject</span><span class="p">):</span>
+<div class="viewcode-block" id="Vehicle">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle">[docs]</a>
+<span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="n">RoadObject</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A moving vehicle on a road, and its kinematics.</span>
@@ -338,7 +340,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">HISTORY_SIZE</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Vehicle.create_random"><a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.create_random">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Vehicle.create_random">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.create_random">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_random</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">road</span><span class="p">:</span> <span class="n">Road</span><span class="p">,</span>
                       <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">lane_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -377,7 +381,10 @@
         <span class="n">v</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">road</span><span class="p">,</span> <span class="n">lane</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">lane</span><span class="o">.</span><span class="n">heading_at</span><span class="p">(</span><span class="n">x0</span><span class="p">),</span> <span class="n">speed</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">v</span></div>
 
-<div class="viewcode-block" id="Vehicle.create_from"><a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.create_from">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="Vehicle.create_from">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.create_from">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_from</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">:</span> <span class="s2">&quot;Vehicle&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vehicle&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new vehicle from an existing one.</span>
@@ -392,7 +399,10 @@
             <span class="n">v</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">color</span>
         <span class="k">return</span> <span class="n">v</span></div>
 
-<div class="viewcode-block" id="Vehicle.act"><a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.act">[docs]</a>    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Vehicle.act">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.act">[docs]</a>
+    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Store an action to be repeated.</span>
 
@@ -401,7 +411,10 @@
         <span class="k">if</span> <span class="n">action</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="n">action</span></div>
 
-<div class="viewcode-block" id="Vehicle.step"><a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.step">[docs]</a>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Vehicle.step">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/kinematics/#highway_env.vehicle.kinematics.Vehicle.step">[docs]</a>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Propagate the vehicle state given its actions.</span>
 
@@ -424,6 +437,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">heading</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LENGTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span><span class="p">[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">on_state_update</span><span class="p">()</span></div>
+
 
     <span class="k">def</span> <span class="nf">clip_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">crashed</span><span class="p">:</span>
@@ -522,6 +536,7 @@
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+
 </pre></div>
           </article>
         </div>
@@ -632,9 +647,9 @@
         })()
       </script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=dda0c7a7"></script>
+    <script src="../../../../_static/documentation_options.js?v=a5603611"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/furo.js?v=7660844c"></script>
     <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>

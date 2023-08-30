@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://highway-env.farama.org/_modules/highway_env/envs/intersection_env.html" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
         <link rel="canonical" href="https://highway-env.farama.org/_modules/highway_env/envs/intersection_env.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.05.20.dev1 -->
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19.dev1 -->
         <title>highway_env.envs.intersection_env - highway-env Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=2b6f8eb5452c44539a42dd9ada0a48f56e5f404d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=3e7f4c72" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=5d0deb98f4b2e6cecaee64745957f1068f205919" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=49cbaffd" />
     
     
 
@@ -304,7 +304,9 @@
 <span class="kn">from</span> <span class="nn">highway_env.vehicle.controller</span> <span class="kn">import</span> <span class="n">ControlledVehicle</span>
 
 
-<div class="viewcode-block" id="IntersectionEnv"><a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv">[docs]</a><span class="k">class</span> <span class="nc">IntersectionEnv</span><span class="p">(</span><span class="n">AbstractEnv</span><span class="p">):</span>
+<div class="viewcode-block" id="IntersectionEnv">
+<a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv">[docs]</a>
+<span class="k">class</span> <span class="nc">IntersectionEnv</span><span class="p">(</span><span class="n">AbstractEnv</span><span class="p">):</span>
 
     <span class="n">ACTIONS</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
         <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;SLOWER&#39;</span><span class="p">,</span>
@@ -313,7 +315,9 @@
     <span class="p">}</span>
     <span class="n">ACTIONS_INDEXES</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ACTIONS</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="IntersectionEnv.default_config"><a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv.default_config">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="IntersectionEnv.default_config">
+<a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv.default_config">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">default_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">config</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">default_config</span><span class="p">()</span>
         <span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
@@ -354,6 +358,7 @@
             <span class="s2">&quot;offroad_terminal&quot;</span><span class="p">:</span> <span class="kc">False</span>
         <span class="p">})</span>
         <span class="k">return</span> <span class="n">config</span></div>
+
 
     <span class="k">def</span> <span class="nf">_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregated reward, for cooperative agents.&quot;&quot;&quot;</span>
@@ -412,11 +417,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_road</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_vehicles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;initial_vehicle_count&quot;</span><span class="p">])</span>
 
-<div class="viewcode-block" id="IntersectionEnv.step"><a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv.step">[docs]</a>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
+<div class="viewcode-block" id="IntersectionEnv.step">
+<a class="viewcode-back" href="../../../../environments/intersection/#highway_env.envs.intersection_env.IntersectionEnv.step">[docs]</a>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
         <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_vehicles</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_spawn_vehicle</span><span class="p">(</span><span class="n">spawn_probability</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;spawn_probability&quot;</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span></div>
+
 
     <span class="k">def</span> <span class="nf">_make_road</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -555,6 +563,7 @@
         <span class="k">return</span> <span class="s2">&quot;il&quot;</span> <span class="ow">in</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">lane_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> \
                <span class="ow">and</span> <span class="s2">&quot;o&quot;</span> <span class="ow">in</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">lane_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> \
                <span class="ow">and</span> <span class="n">vehicle</span><span class="o">.</span><span class="n">lane</span><span class="o">.</span><span class="n">local_coordinates</span><span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">position</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">exit_distance</span></div>
+
 
 
 <span class="k">class</span> <span class="nc">MultiAgentIntersectionEnv</span><span class="p">(</span><span class="n">IntersectionEnv</span><span class="p">):</span>
@@ -711,9 +720,9 @@
         })()
       </script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=dda0c7a7"></script>
+    <script src="../../../../_static/documentation_options.js?v=a5603611"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/furo.js?v=7660844c"></script>
     <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>

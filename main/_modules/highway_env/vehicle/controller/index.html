@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://highway-env.farama.org/_modules/highway_env/vehicle/controller.html" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
         <link rel="canonical" href="https://highway-env.farama.org/_modules/highway_env/vehicle/controller.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.05.20.dev1 -->
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19.dev1 -->
         <title>highway_env.vehicle.controller - highway-env Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=2b6f8eb5452c44539a42dd9ada0a48f56e5f404d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=3e7f4c72" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=5d0deb98f4b2e6cecaee64745957f1068f205919" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=49cbaffd" />
     
     
 
@@ -301,7 +301,9 @@
 <span class="kn">from</span> <span class="nn">highway_env.vehicle.kinematics</span> <span class="kn">import</span> <span class="n">Vehicle</span>
 
 
-<div class="viewcode-block" id="ControlledVehicle"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle">[docs]</a><span class="k">class</span> <span class="nc">ControlledVehicle</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+<div class="viewcode-block" id="ControlledVehicle">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle">[docs]</a>
+<span class="k">class</span> <span class="nc">ControlledVehicle</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A vehicle piloted by two low-level controller, allowing high-level actions such as cruise control and lane changes.</span>
 
@@ -337,7 +339,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">target_speed</span> <span class="o">=</span> <span class="n">target_speed</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="n">route</span>
 
-<div class="viewcode-block" id="ControlledVehicle.create_from"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.create_from">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ControlledVehicle.create_from">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.create_from">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_from</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">:</span> <span class="s2">&quot;ControlledVehicle&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ControlledVehicle&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new vehicle from an existing one.</span>
@@ -352,7 +356,10 @@
                 <span class="n">route</span><span class="o">=</span><span class="n">vehicle</span><span class="o">.</span><span class="n">route</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">v</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.plan_route_to"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.plan_route_to">[docs]</a>    <span class="k">def</span> <span class="nf">plan_route_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ControlledVehicle&quot;</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.plan_route_to">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.plan_route_to">[docs]</a>
+    <span class="k">def</span> <span class="nf">plan_route_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ControlledVehicle&quot;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Plan a route to a destination in the road network</span>
 
@@ -368,7 +375,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lane_index</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.act"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.act">[docs]</a>    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.act">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.act">[docs]</a>
+    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a high-level action to change the desired lane or speed.</span>
 
@@ -398,7 +408,10 @@
         <span class="n">action</span><span class="p">[</span><span class="s1">&#39;steering&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">action</span><span class="p">[</span><span class="s1">&#39;steering&#39;</span><span class="p">],</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">MAX_STEERING_ANGLE</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_STEERING_ANGLE</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">action</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.follow_road"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.follow_road">[docs]</a>    <span class="k">def</span> <span class="nf">follow_road</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.follow_road">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.follow_road">[docs]</a>
+    <span class="k">def</span> <span class="nf">follow_road</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;At the end of a lane, automatically switch to a next one.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">road</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">get_lane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_lane_index</span><span class="p">)</span><span class="o">.</span><span class="n">after_end</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">target_lane_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">road</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">next_lane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_lane_index</span><span class="p">,</span>
@@ -406,7 +419,10 @@
                                                                  <span class="n">position</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">,</span>
                                                                  <span class="n">np_random</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">road</span><span class="o">.</span><span class="n">np_random</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.steering_control"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.steering_control">[docs]</a>    <span class="k">def</span> <span class="nf">steering_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_lane_index</span><span class="p">:</span> <span class="n">LaneIndex</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.steering_control">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.steering_control">[docs]</a>
+    <span class="k">def</span> <span class="nf">steering_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_lane_index</span><span class="p">:</span> <span class="n">LaneIndex</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Steer the vehicle to follow the center of an given lane.</span>
 
@@ -436,7 +452,10 @@
         <span class="n">steering_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">steering_angle</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">MAX_STEERING_ANGLE</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_STEERING_ANGLE</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">steering_angle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.speed_control"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.speed_control">[docs]</a>    <span class="k">def</span> <span class="nf">speed_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.speed_control">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.speed_control">[docs]</a>
+    <span class="k">def</span> <span class="nf">speed_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Control the speed of the vehicle.</span>
 
@@ -447,7 +466,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">KP_A</span> <span class="o">*</span> <span class="p">(</span><span class="n">target_speed</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.get_routes_at_intersection"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.get_routes_at_intersection">[docs]</a>    <span class="k">def</span> <span class="nf">get_routes_at_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Route</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.get_routes_at_intersection">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.get_routes_at_intersection">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_routes_at_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Route</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the list of routes that can be followed at the next intersection.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">route</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[]</span>
@@ -465,7 +487,10 @@
                   <span class="k">for</span> <span class="n">destination</span> <span class="ow">in</span> <span class="n">next_destinations_from</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">routes</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.set_route_at_intersection"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.set_route_at_intersection">[docs]</a>    <span class="k">def</span> <span class="nf">set_route_at_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_to</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.set_route_at_intersection">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.set_route_at_intersection">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_route_at_intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_to</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the road to be followed at the next intersection.</span>
 
@@ -480,7 +505,10 @@
                 <span class="n">_to</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">road</span><span class="o">.</span><span class="n">np_random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">routes</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="n">routes</span><span class="p">[</span><span class="n">_to</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">routes</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="ControlledVehicle.predict_trajectory_constant_speed"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.predict_trajectory_constant_speed">[docs]</a>    <span class="k">def</span> <span class="nf">predict_trajectory_constant_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="ControlledVehicle.predict_trajectory_constant_speed">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.ControlledVehicle.predict_trajectory_constant_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">predict_trajectory_constant_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Predict the future positions of the vehicle along its planned route, under constant speed</span>
 
@@ -490,10 +518,14 @@
         <span class="n">coordinates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lane</span><span class="o">.</span><span class="n">local_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
         <span class="n">route</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">route</span> <span class="ow">or</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lane_index</span><span class="p">]</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">road</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">position_heading_along_route</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-                     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">]))</span></div></div>
+                     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">]))</span></div>
+</div>
 
 
-<div class="viewcode-block" id="MDPVehicle"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle">[docs]</a><span class="k">class</span> <span class="nc">MDPVehicle</span><span class="p">(</span><span class="n">ControlledVehicle</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MDPVehicle">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle">[docs]</a>
+<span class="k">class</span> <span class="nc">MDPVehicle</span><span class="p">(</span><span class="n">ControlledVehicle</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A controlled vehicle with a specified discrete range of allowed target speeds.&quot;&quot;&quot;</span>
     <span class="n">DEFAULT_TARGET_SPEEDS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -524,7 +556,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">speed_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed_to_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_speed</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target_speed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_to_speed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speed_index</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MDPVehicle.act"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.act">[docs]</a>    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="MDPVehicle.act">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.act">[docs]</a>
+    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a high-level action.</span>
 
@@ -544,7 +578,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">target_speed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_to_speed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speed_index</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">act</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="MDPVehicle.index_to_speed"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.index_to_speed">[docs]</a>    <span class="k">def</span> <span class="nf">index_to_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MDPVehicle.index_to_speed">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.index_to_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">index_to_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert an index among allowed speeds to its corresponding speed</span>
 
@@ -553,7 +590,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="p">[</span><span class="n">index</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="MDPVehicle.speed_to_index"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.speed_to_index">[docs]</a>    <span class="k">def</span> <span class="nf">speed_to_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="MDPVehicle.speed_to_index">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.speed_to_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">speed_to_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the index of the closest speed allowed to a given speed.</span>
 
@@ -565,7 +605,10 @@
         <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">speed</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_speeds</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="MDPVehicle.speed_to_index_default"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.speed_to_index_default">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="MDPVehicle.speed_to_index_default">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.speed_to_index_default">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">speed_to_index_default</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the index of the closest speed allowed to a given speed.</span>
@@ -579,11 +622,14 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span>
             <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">DEFAULT_TARGET_SPEEDS</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">DEFAULT_TARGET_SPEEDS</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span></div>
 
+
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_speed_index</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">:</span> <span class="n">Vehicle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">vehicle</span><span class="p">,</span> <span class="s2">&quot;speed_index&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">speed_to_index_default</span><span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">speed</span><span class="p">))</span>
 
-<div class="viewcode-block" id="MDPVehicle.predict_trajectory"><a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.predict_trajectory">[docs]</a>    <span class="k">def</span> <span class="nf">predict_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actions</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">action_duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">trajectory_timestep</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> \
+<div class="viewcode-block" id="MDPVehicle.predict_trajectory">
+<a class="viewcode-back" href="../../../../dynamics/vehicle/controller/#highway_env.vehicle.controller.MDPVehicle.predict_trajectory">[docs]</a>
+    <span class="k">def</span> <span class="nf">predict_trajectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actions</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">action_duration</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">trajectory_timestep</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">dt</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> \
             <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ControlledVehicle</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Predict the future trajectory of the vehicle given a sequence of actions.</span>
@@ -605,7 +651,9 @@
                 <span class="n">v</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">trajectory_timestep</span> <span class="o">/</span> <span class="n">dt</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">states</span></div></div>
+        <span class="k">return</span> <span class="n">states</span></div>
+</div>
+
 </pre></div>
           </article>
         </div>
@@ -716,9 +764,9 @@
         })()
       </script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=dda0c7a7"></script>
+    <script src="../../../../_static/documentation_options.js?v=a5603611"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/furo.js?v=7660844c"></script>
     <script src="../../../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>

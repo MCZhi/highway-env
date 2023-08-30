@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="../../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://highway-env.farama.org/_modules/highway_env/envs/common/observation.html" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../../../genindex/" /><link rel="search" title="Search" href="../../../../../search/" />
         <link rel="canonical" href="https://highway-env.farama.org/_modules/highway_env/envs/common/observation.html" />
 
-    <link rel="shortcut icon" href="../../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.05.20.dev1 -->
+    <link rel="shortcut icon" href="../../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.2.5 and Furo 2023.08.19.dev1 -->
         <title>highway_env.envs.common.observation - highway-env Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo.css?digest=2b6f8eb5452c44539a42dd9ada0a48f56e5f404d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo.css?v=3e7f4c72" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css?digest=5d0deb98f4b2e6cecaee64745957f1068f205919" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css?v=49cbaffd" />
     
     
 
@@ -337,7 +337,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__observer_vehicle</span> <span class="o">=</span> <span class="n">vehicle</span>
 
 
-<div class="viewcode-block" id="GrayscaleObservation"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation">[docs]</a><span class="k">class</span> <span class="nc">GrayscaleObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
+<div class="viewcode-block" id="GrayscaleObservation">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation">[docs]</a>
+<span class="k">class</span> <span class="nc">GrayscaleObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An observation class that collects directly what the simulator renders.</span>
@@ -379,14 +381,20 @@
         <span class="p">})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span> <span class="o">=</span> <span class="n">EnvViewer</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">viewer_config</span><span class="p">)</span>
 
-<div class="viewcode-block" id="GrayscaleObservation.space"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation.space">[docs]</a>    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+<div class="viewcode-block" id="GrayscaleObservation.space">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation.space">[docs]</a>
+    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GrayscaleObservation.observe"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation.observe">[docs]</a>    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="GrayscaleObservation.observe">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.GrayscaleObservation.observe">[docs]</a>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="n">new_obs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_to_grayscale</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">new_obs</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs</span></div>
+
 
     <span class="k">def</span> <span class="nf">_render_to_grayscale</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">observer_vehicle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer_vehicle</span>
@@ -394,6 +402,7 @@
         <span class="n">raw_rgb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">get_image</span><span class="p">()</span>  <span class="c1"># H x W x C</span>
         <span class="n">raw_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span><span class="n">raw_rgb</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">raw_rgb</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span></div>
+
 
 
 <span class="k">class</span> <span class="nc">TimeToCollisionObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
@@ -428,7 +437,9 @@
         <span class="k">return</span> <span class="n">clamped_grid</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="KinematicObservation"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation">[docs]</a><span class="k">class</span> <span class="nc">KinematicObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
+<div class="viewcode-block" id="KinematicObservation">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation">[docs]</a>
+<span class="k">class</span> <span class="nc">KinematicObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Observe the kinematics of nearby vehicles.&quot;&quot;&quot;</span>
 
@@ -470,10 +481,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">observe_intentions</span> <span class="o">=</span> <span class="n">observe_intentions</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">include_obstacles</span> <span class="o">=</span> <span class="n">include_obstacles</span>
 
-<div class="viewcode-block" id="KinematicObservation.space"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.space">[docs]</a>    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+<div class="viewcode-block" id="KinematicObservation.space">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.space">[docs]</a>
+    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vehicles_count</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">)),</span> <span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="KinematicObservation.normalize_obs"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.normalize_obs">[docs]</a>    <span class="k">def</span> <span class="nf">normalize_obs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+
+<div class="viewcode-block" id="KinematicObservation.normalize_obs">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.normalize_obs">[docs]</a>
+    <span class="k">def</span> <span class="nf">normalize_obs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Normalize the observation values.</span>
 
@@ -495,7 +511,10 @@
                     <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">df</span></div>
 
-<div class="viewcode-block" id="KinematicObservation.observe"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.observe">[docs]</a>    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="KinematicObservation.observe">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicObservation.observe">[docs]</a>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">road</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
@@ -530,10 +549,14 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">==</span> <span class="s2">&quot;shuffled&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">np_random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
         <span class="c1"># Flatten</span>
-        <span class="k">return</span> <span class="n">obs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">obs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="OccupancyGridObservation"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation">[docs]</a><span class="k">class</span> <span class="nc">OccupancyGridObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
+
+<div class="viewcode-block" id="OccupancyGridObservation">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation">[docs]</a>
+<span class="k">class</span> <span class="nc">OccupancyGridObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Observe an occupancy grid of nearby vehicles.&quot;&quot;&quot;</span>
 
@@ -576,13 +599,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">clip</span> <span class="o">=</span> <span class="n">clip</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">as_image</span> <span class="o">=</span> <span class="n">as_image</span>
 
-<div class="viewcode-block" id="OccupancyGridObservation.space"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.space">[docs]</a>    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+<div class="viewcode-block" id="OccupancyGridObservation.space">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.space">[docs]</a>
+    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_image</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OccupancyGridObservation.normalize"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.normalize">[docs]</a>    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+
+<div class="viewcode-block" id="OccupancyGridObservation.normalize">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.normalize">[docs]</a>
+    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Normalize the observation values.</span>
 
@@ -599,7 +627,10 @@
                 <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">lmap</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="p">[</span><span class="n">f_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">df</span></div>
 
-<div class="viewcode-block" id="OccupancyGridObservation.observe"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.observe">[docs]</a>    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="OccupancyGridObservation.observe">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.observe">[docs]</a>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">road</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
@@ -642,7 +673,10 @@
 
             <span class="k">return</span> <span class="n">obs</span></div>
 
-<div class="viewcode-block" id="OccupancyGridObservation.pos_to_index"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.pos_to_index">[docs]</a>    <span class="k">def</span> <span class="nf">pos_to_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">relative</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="OccupancyGridObservation.pos_to_index">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.pos_to_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">pos_to_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">relative</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a world position to a grid cell index</span>
 
@@ -660,6 +694,7 @@
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_size</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_step</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>\
                <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_size</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_step</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span></div>
 
+
     <span class="k">def</span> <span class="nf">index_to_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 
         <span class="n">position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -673,7 +708,9 @@
         <span class="n">position</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer_vehicle</span><span class="o">.</span><span class="n">position</span>
         <span class="k">return</span> <span class="n">position</span>
 
-<div class="viewcode-block" id="OccupancyGridObservation.fill_road_layer_by_lanes"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.fill_road_layer_by_lanes">[docs]</a>    <span class="k">def</span> <span class="nf">fill_road_layer_by_lanes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lane_perception_distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="OccupancyGridObservation.fill_road_layer_by_lanes">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.fill_road_layer_by_lanes">[docs]</a>
+    <span class="k">def</span> <span class="nf">fill_road_layer_by_lanes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lane_perception_distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A layer to encode the onroad (1) / offroad (0) information</span>
 
@@ -698,7 +735,10 @@
                         <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">cell</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
                             <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">layer_index</span><span class="p">,</span> <span class="n">cell</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="OccupancyGridObservation.fill_road_layer_by_cell"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.fill_road_layer_by_cell">[docs]</a>    <span class="k">def</span> <span class="nf">fill_road_layer_by_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="OccupancyGridObservation.fill_road_layer_by_cell">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.OccupancyGridObservation.fill_road_layer_by_cell">[docs]</a>
+    <span class="k">def</span> <span class="nf">fill_road_layer_by_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A layer to encode the onroad (1) / offroad (0) information</span>
 
@@ -711,15 +751,21 @@
                 <span class="k">for</span> <span class="n">_to</span> <span class="ow">in</span> <span class="n">road</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="n">_from</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                     <span class="k">for</span> <span class="n">lane</span> <span class="ow">in</span> <span class="n">road</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="n">_from</span><span class="p">][</span><span class="n">_to</span><span class="p">]:</span>
                         <span class="k">if</span> <span class="n">lane</span><span class="o">.</span><span class="n">on_lane</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_to_pos</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))):</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">layer_index</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span></div></div>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">layer_index</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span></div>
+</div>
 
 
-<div class="viewcode-block" id="KinematicsGoalObservation"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation">[docs]</a><span class="k">class</span> <span class="nc">KinematicsGoalObservation</span><span class="p">(</span><span class="n">KinematicObservation</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KinematicsGoalObservation">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation">[docs]</a>
+<span class="k">class</span> <span class="nc">KinematicsGoalObservation</span><span class="p">(</span><span class="n">KinematicObservation</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="s1">&#39;AbstractEnv&#39;</span><span class="p">,</span> <span class="n">scales</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scales</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<div class="viewcode-block" id="KinematicsGoalObservation.space"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation.space">[docs]</a>    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
+<div class="viewcode-block" id="KinematicsGoalObservation.space">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation.space">[docs]</a>
+    <span class="k">def</span> <span class="nf">space</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">obs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observe</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
@@ -730,7 +776,10 @@
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="KinematicsGoalObservation.observe"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation.observe">[docs]</a>    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="KinematicsGoalObservation.observe">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.KinematicsGoalObservation.observe">[docs]</a>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">observer_vehicle</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">([</span>
                 <span class="p">(</span><span class="s2">&quot;observation&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">),))),</span>
@@ -745,7 +794,9 @@
             <span class="p">(</span><span class="s2">&quot;achieved_goal&quot;</span><span class="p">,</span> <span class="n">obs</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scales</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;desired_goal&quot;</span><span class="p">,</span> <span class="n">goal</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scales</span><span class="p">)</span>
          <span class="p">])</span>
-        <span class="k">return</span> <span class="n">obs</span></div></div>
+        <span class="k">return</span> <span class="n">obs</span></div>
+</div>
+
 
 
 <span class="k">class</span> <span class="nc">AttributesObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
@@ -804,11 +855,15 @@
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">obs_type</span><span class="o">.</span><span class="n">observe</span><span class="p">()</span> <span class="k">for</span> <span class="n">obs_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">observation_types</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ExitObservation"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.ExitObservation">[docs]</a><span class="k">class</span> <span class="nc">ExitObservation</span><span class="p">(</span><span class="n">KinematicObservation</span><span class="p">):</span>
+<div class="viewcode-block" id="ExitObservation">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.ExitObservation">[docs]</a>
+<span class="k">class</span> <span class="nc">ExitObservation</span><span class="p">(</span><span class="n">KinematicObservation</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Specific to exit_env, observe the distance to the next exit lane as part of a KinematicObservation.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ExitObservation.observe"><a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.ExitObservation.observe">[docs]</a>    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="ExitObservation.observe">
+<a class="viewcode-back" href="../../../../../observations/#highway_env.envs.common.observation.ExitObservation.observe">[docs]</a>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">road</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">space</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
@@ -842,7 +897,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order</span> <span class="o">==</span> <span class="s2">&quot;shuffled&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">np_random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
         <span class="c1"># Flatten</span>
-        <span class="k">return</span> <span class="n">obs</span></div></div>
+        <span class="k">return</span> <span class="n">obs</span></div>
+</div>
+
 
 
 <span class="k">class</span> <span class="nc">LidarObservation</span><span class="p">(</span><span class="n">ObservationType</span><span class="p">):</span>
@@ -1058,9 +1115,9 @@
         })()
       </script>
 
-    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js?v=dda0c7a7"></script>
+    <script src="../../../../../_static/documentation_options.js?v=a5603611"></script>
     <script src="../../../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/scripts/furo.js?v=7660844c"></script>
     <script src="../../../../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
